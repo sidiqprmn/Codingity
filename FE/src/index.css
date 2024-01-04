@@ -1,0 +1,34 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Poppins&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: "Poppins", sans-serif;
+  color: black;
+  background-color: #fcf8f5;
+}
+::-webkit-scrollbar {
+  width: 0.5em;
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: transparent;
+}
+
+.blur-border {
+  position: relative; /* Diperlukan untuk pseudo-element */
+}
+
+.blur-border::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border: 8px solid transparent; /* Atur ketebalan border sesuai keinginan Anda (misalnya, 8px) */
+  backdrop-filter: blur(3px); /* Kurangi nilai blur sesuai keinginan Anda (misalnya, 3px) */
+  z-index: -1; /* Untuk menempatkan pseudo-element di belakang konten */
+}
